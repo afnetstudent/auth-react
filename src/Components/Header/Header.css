@@ -1,0 +1,16 @@
+
+.container{
+    background-image: url("/src/images/Bg.png");
+    background-position: center ;
+    background-size: 100%;
+   
+}
+.nav{
+    margin-left: 200px;
+}
+ 
+ li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    }
