@@ -12,6 +12,8 @@ import Destination from "./Components/Destination/Destination";
 import { createContext, useContext, useState } from "react";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import NotFound from "./Components/NotFound/NotFound";
+import Blog from "./Components/Blog/Blog";
+import Contact from "./Components/Contact/Contact";
 
 
 export const UserContext = createContext()
@@ -22,10 +24,17 @@ function App() {
     <UserContext.Provider value={[loggIN, setLoggIn]}>
     <Router>
       <p>name {loggIN.name}</p>
+      <p>Email {loggIN.email}</p>
       <Header></Header>
       <Switch>
         <Route path="/home">
           <Home/>
+        </Route>
+        <Route path="/blog">
+          <Blog/>
+        </Route>
+        <Route path="/contact">
+          <Contact/>
         </Route>
         <PrivateRoute path="/destination">
           <Destination/>
@@ -33,7 +42,7 @@ function App() {
         <Route path="/login">
           <Login/>
         </Route>
-        <Route exact="/">
+        <Route exact path="/">
         <Home/>
         </Route>
         <Route exact="*">

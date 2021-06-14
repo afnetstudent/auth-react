@@ -46,8 +46,10 @@ const Login = () => {
   .then((result) => {
     var credential = result.credential;
     var token = credential.accessToken;
-    var user = result.user;
-    console.log(user)
+    const {email, displayName} = result.user; 
+    const newUser = {name:displayName,email}
+    setLoggIn(newUser);
+    hisTory.replace(from)
   }).catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
